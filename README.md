@@ -1,4 +1,4 @@
-# UNLocationNotificationTrigger Example
+# iOS 10 LocalNotification - UNLocationNotificationTrigger Example
 
 ## Requirements:
 
