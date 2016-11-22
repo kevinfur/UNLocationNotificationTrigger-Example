@@ -13,27 +13,21 @@ import CoreLocation
 class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     let locationManager = CLLocationManager()
+    let notificationCenter = UNUserNotificationCenter.current()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters // para gastar menos bateria
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters // less batery ussage
         //locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.requestWhenInUseAuthorization()
         
-        UNUserNotificationCenter.current().delegate = self
-    }
-    
-    @IBAction func RegisterNotification(_ sender: Any) {
-        let center = UNUserNotificationCenter.current()
-        
-        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+        notificationCenter.delegate = self
+        notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
-                print("Yay!")
-            } else {
-                print("D'oh")
+                print("NotificationCenter Authorization Granted!")
             }
         }
     }
@@ -41,18 +35,18 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     @IBAction func ScheduleNotification(_ sender: Any) {
         let center = UNUserNotificationCenter.current()
         
-        center.removeAllPendingNotificationRequests() // borra las notificaciones locales pendientes, hay un limite
+        center.removeAllPendingNotificationRequests() // deletes pending scheduled notifications, there is a schedule limit qty
         
         let content = UNMutableNotificationContent()
-        content.title = "Qué haces acá pibe!?"
-        content.body = "Es peligroso estar por esta zona"
+        content.title = "What are you doing here!?"
+        content.body = "Run! This zone is dangerous! :o"
         content.categoryIdentifier = "alarm"
         content.sound = UNNotificationSound.default()
         
-        // Trigger within a timeInterval
+        // Ex. Trigger within a timeInterval
         // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
-        //Trigger within a Location
+        // Ex. Trigger within a Location
         let centerLoc = CLLocationCoordinate2D(latitude: -34.6038148, longitude: -58.3792672)
         let region = CLCircularRegion(center: centerLoc, radius: 2000.0, identifier: UUID().uuidString)
         region.notifyOnEntry = true
