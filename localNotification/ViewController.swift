@@ -48,7 +48,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         
         // Ex. Trigger within a Location
         let centerLoc = CLLocationCoordinate2D(latitude: -34.6038148, longitude: -58.3792672)
-        let region = CLCircularRegion(center: centerLoc, radius: 2000.0, identifier: UUID().uuidString)
+        let region = CLCircularRegion(center: centerLoc, radius: 35.0, identifier: UUID().uuidString) // radius in meters
         region.notifyOnEntry = true
         region.notifyOnExit = false
         let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
