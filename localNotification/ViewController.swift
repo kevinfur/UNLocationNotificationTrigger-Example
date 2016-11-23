@@ -20,9 +20,10 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters // less batery ussage
-        //locationManager.pausesLocationUpdatesAutomatically = false
+        locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.allowsBackgroundLocationUpdates = true
-        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
         
         notificationCenter.delegate = self
         notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
@@ -47,7 +48,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
         // Ex. Trigger within a Location
-        let centerLoc = CLLocationCoordinate2D(latitude: -34.6038148, longitude: -58.3792672)
+        let centerLoc = CLLocationCoordinate2D(latitude: -34.603486, longitude: -58.377338)
         let region = CLCircularRegion(center: centerLoc, radius: 35.0, identifier: UUID().uuidString) // radius in meters
         region.notifyOnEntry = true
         region.notifyOnExit = false

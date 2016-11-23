@@ -14,6 +14,7 @@
 		F10B3FD11DD5081100745E99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F10B3FCF1DD5081100745E99 /* LaunchScreen.storyboard */; };
 		F10B3FDC1DD5081100745E99 /* localNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B3FDB1DD5081100745E99 /* localNotificationTests.swift */; };
 		F10B3FE71DD5081100745E99 /* localNotificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B3FE61DD5081100745E99 /* localNotificationUITests.swift */; };
+		F1FB70E51DE5D7C1008EB2E2 /* casa.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F1FB70E41DE5D7C1008EB2E2 /* casa.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		F10B3FE21DD5081100745E99 /* localNotificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = localNotificationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10B3FE61DD5081100745E99 /* localNotificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = localNotificationUITests.swift; sourceTree = "<group>"; };
 		F10B3FE81DD5081100745E99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1FB70E41DE5D7C1008EB2E2 /* casa.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = casa.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		F10B3FBA1DD5081100745E99 = {
 			isa = PBXGroup;
 			children = (
+				F1FB70E41DE5D7C1008EB2E2 /* casa.gpx */,
 				F10B3FC51DD5081100745E99 /* localNotification */,
 				F10B3FDA1DD5081100745E99 /* localNotificationTests */,
 				F10B3FE51DD5081100745E99 /* localNotificationUITests */,
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F10B3FD11DD5081100745E99 /* LaunchScreen.storyboard in Resources */,
+				F1FB70E51DE5D7C1008EB2E2 /* casa.gpx in Resources */,
 				F10B3FCE1DD5081100745E99 /* Assets.xcassets in Resources */,
 				F10B3FCC1DD5081100745E99 /* Main.storyboard in Resources */,
 			);
@@ -517,6 +521,7 @@
 				F10B3FED1DD5081100745E99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F10B3FEE1DD5081100745E99 /* Build configuration list for PBXNativeTarget "localNotificationTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +530,7 @@
 				F10B3FF01DD5081100745E99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F10B3FF11DD5081100745E99 /* Build configuration list for PBXNativeTarget "localNotificationUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +539,7 @@
 				F10B3FF31DD5081100745E99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
