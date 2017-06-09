@@ -14,6 +14,9 @@
 		F10B3FD11DD5081100745E99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F10B3FCF1DD5081100745E99 /* LaunchScreen.storyboard */; };
 		F10B3FDC1DD5081100745E99 /* localNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B3FDB1DD5081100745E99 /* localNotificationTests.swift */; };
 		F10B3FE71DD5081100745E99 /* localNotificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10B3FE61DD5081100745E99 /* localNotificationUITests.swift */; };
+		F1792A8F1E01DF4C0049F585 /* esquina.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F1792A8E1E01DF4C0049F585 /* esquina.gpx */; };
+		F1792A911E01DFD30049F585 /* esquina.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F1792A901E01DFD30049F585 /* esquina.gpx */; };
+		F1B948AC1E09A900001ABDE3 /* brasil.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F1B948AB1E09A900001ABDE3 /* brasil.gpx */; };
 		F1FB70E51DE5D7C1008EB2E2 /* casa.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F1FB70E41DE5D7C1008EB2E2 /* casa.gpx */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,9 @@
 		F10B3FE21DD5081100745E99 /* localNotificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = localNotificationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10B3FE61DD5081100745E99 /* localNotificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = localNotificationUITests.swift; sourceTree = "<group>"; };
 		F10B3FE81DD5081100745E99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1792A8E1E01DF4C0049F585 /* esquina.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = esquina.gpx; path = ../../Downloads/esquina.gpx; sourceTree = "<group>"; };
+		F1792A901E01DFD30049F585 /* esquina.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = esquina.gpx; path = ../../Downloads/esquina.gpx; sourceTree = "<group>"; };
+		F1B948AB1E09A900001ABDE3 /* brasil.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = brasil.gpx; sourceTree = "<group>"; };
 		F1FB70E41DE5D7C1008EB2E2 /* casa.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = casa.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +85,9 @@
 		F10B3FBA1DD5081100745E99 = {
 			isa = PBXGroup;
 			children = (
+				F1B948AB1E09A900001ABDE3 /* brasil.gpx */,
+				F1792A901E01DFD30049F585 /* esquina.gpx */,
+				F1792A8E1E01DF4C0049F585 /* esquina.gpx */,
 				F1FB70E41DE5D7C1008EB2E2 /* casa.gpx */,
 				F10B3FC51DD5081100745E99 /* localNotification */,
 				F10B3FDA1DD5081100745E99 /* localNotificationTests */,
@@ -243,8 +252,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1792A911E01DFD30049F585 /* esquina.gpx in Resources */,
 				F10B3FD11DD5081100745E99 /* LaunchScreen.storyboard in Resources */,
+				F1B948AC1E09A900001ABDE3 /* brasil.gpx in Resources */,
 				F1FB70E51DE5D7C1008EB2E2 /* casa.gpx in Resources */,
+				F1792A8F1E01DF4C0049F585 /* esquina.gpx in Resources */,
 				F10B3FCE1DD5081100745E99 /* Assets.xcassets in Resources */,
 				F10B3FCC1DD5081100745E99 /* Main.storyboard in Resources */,
 			);

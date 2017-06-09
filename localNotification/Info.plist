@@ -22,10 +22,10 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Necesito la location pibe!</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Necesito la location pibe!!!</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Usando location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Necesito la location pibe!!!</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>

@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 import CoreLocation
 
-class ViewController: UIViewController, UNUserNotificationCenterDelegate {
+class ViewController: UIViewController, UNUserNotificationCenterDelegate, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     let notificationCenter = UNUserNotificationCenter.current()
@@ -19,18 +19,18 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters // less batery ussage
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters // less batery ussage
         locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
-        
+        locationManager.delegate = self
         notificationCenter.delegate = self
         notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
                 print("NotificationCenter Authorization Granted!")
             }
         }
+        locationManager.startUpdatingLocation()
     }
 
     @IBAction func ScheduleNotification(_ sender: Any) {
@@ -48,11 +48,11 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         // let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
         // Ex. Trigger within a Location
-        let centerLoc = CLLocationCoordinate2D(latitude: -34.603486, longitude: -58.377338)
-        let region = CLCircularRegion(center: centerLoc, radius: 35.0, identifier: UUID().uuidString) // radius in meters
+        let centerLoc = CLLocationCoordinate2D(latitude: 37.32975796, longitude: -122.01989151)
+        let region = CLCircularRegion(center: centerLoc, radius: 100.0, identifier: UUID().uuidString) // radius in meters
         region.notifyOnEntry = true
-        region.notifyOnExit = false
-        let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
+        region.notifyOnExit = true
+        let trigger = UNLocationNotificationTrigger(region: region, repeats: true)
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         center.add(request)
@@ -63,5 +63,13 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         completionHandler([.alert, .sound])
     }
 
+    func locationManager(_ manager: CLLocationManager,
+                         didUpdateLocations locations: [CLLocation]) {
+        let latestLocation: CLLocation = locations[locations.count - 1]
+        let latitude = String(latestLocation.coordinate.latitude)
+        let longitude = String(latestLocation.coordinate.longitude)
+        print("\(latitude) \(longitude)")
+    }
+    
 }
 
